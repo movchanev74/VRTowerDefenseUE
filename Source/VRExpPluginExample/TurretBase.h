@@ -2,19 +2,22 @@
 
 #pragma once
 
+#include "TurretPartRotatableComponent.h"
 #include "CoreMinimal.h"
+#include "TurretPartScanerComponent.h"
 #include "GameFramework/Character.h"
 #include "TurretBase.generated.h"
 
 UCLASS()
-class VREXPPLUGINEXAMPLE_API ATurretBase : public ACharacter
+class VREXPPLUGINEXAMPLE_API ATurretBase : public APawn
 {
 	GENERATED_BODY()
 
 public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)//, Category = "AI")
-	AActor* myActor;
-
+	TArray<UTurretPartScanerComponent*> ScanerComponents;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TArray<UTurretPartRotatableComponent*> RotatableComponents;
 	// Sets default values for this character's properties
 	ATurretBase();
 
@@ -31,4 +34,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void TurretHierarchyUpdated();
+
+	template <typename T>
+	void ScanForComponentsInTree(TArray<T*>& OutComponents);
+
+private:
+	void ScanForComponentsRecursive(AActor* Actor, TSubclassOf<UActorComponent> ComponentClass, TArray<UActorComponent*>& OutComponents);
 };
