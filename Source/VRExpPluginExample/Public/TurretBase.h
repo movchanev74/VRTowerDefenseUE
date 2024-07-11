@@ -2,9 +2,9 @@
 
 #pragma once
 
-#include "TurretPartRotatableComponent.h"
+#include "TurretPartComponents/TurretPartRotatableComponent.h"
 #include "CoreMinimal.h"
-#include "TurretPartScanerComponent.h"
+#include "TurretPartComponents/TurretPartScanerComponent.h"
 #include "GameFramework/Character.h"
 #include "TurretBase.generated.h"
 

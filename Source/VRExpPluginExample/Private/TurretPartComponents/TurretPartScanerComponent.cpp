@@ -1,4 +1,4 @@
-﻿#include "TurretPartScanerComponent.h"
+﻿#include "TurretPartComponents/TurretPartScanerComponent.h"
 #include "GameFramework/Actor.h"
 #include "TimerManager.h"
 #include "Engine/World.h"

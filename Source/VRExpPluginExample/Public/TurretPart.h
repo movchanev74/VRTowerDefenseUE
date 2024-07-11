@@ -7,7 +7,7 @@
 #include "Components/SphereComponent.h"
 #include "Grippables/GrippableStaticMeshComponent.h"
 #include "TurretBase.h"
-#include "TurretPartContainerComponent.h"
+#include "TurretPartComponents/TurretPartContainerComponent.h"
 #include "TurretPart.generated.h"
 
 UCLASS()

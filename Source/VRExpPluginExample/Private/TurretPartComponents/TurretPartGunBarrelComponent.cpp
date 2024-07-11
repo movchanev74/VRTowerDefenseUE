@@ -1,4 +1,4 @@
-#include "TurretPartGunBarrelComponent.h"
+#include "TurretPartComponents/TurretPartGunBarrelComponent.h"
 
 
 UTurretPartGunBarrelComponent::UTurretPartGunBarrelComponent()

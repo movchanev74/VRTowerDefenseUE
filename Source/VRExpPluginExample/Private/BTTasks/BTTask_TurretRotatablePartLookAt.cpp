@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BTTask_TurretRotatablePartLookAt.h"
+#include "BTTasks/BTTask_TurretRotatablePartLookAt.h"
 
 
 UBTTask_TurretRotatablePartLookAt::UBTTask_TurretRotatablePartLookAt()

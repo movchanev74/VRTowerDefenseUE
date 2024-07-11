@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "TurretPartRotatableComponent.h"
+#include "TurretPartComponents/TurretPartRotatableComponent.h"
 #include "GameFramework/Actor.h"
 #include "TimerManager.h"
 #include "Engine/World.h"

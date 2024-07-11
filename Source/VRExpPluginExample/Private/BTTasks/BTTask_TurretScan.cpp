@@ -1,7 +1,7 @@
 ﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BTTask_TurretScan.h"
+#include "BTTasks/BTTask_TurretScan.h"
 
 UBTTask_TurretScan::UBTTask_TurretScan()
 {
