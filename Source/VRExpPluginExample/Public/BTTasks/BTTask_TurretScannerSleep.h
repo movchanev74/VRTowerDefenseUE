@@ -7,7 +7,7 @@
 #include "BTTask_TurretScannerSleep.generated.h"
 
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(Category = "Turret", meta = (BlueprintSpawnableComponent))
 class VREXPPLUGINEXAMPLE_API UBTTask_TurretScannerSleep : public UBTTaskNode
 {
 	GENERATED_BODY()

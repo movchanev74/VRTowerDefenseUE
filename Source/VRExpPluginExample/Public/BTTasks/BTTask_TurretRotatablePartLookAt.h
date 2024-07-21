@@ -7,7 +7,7 @@
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BTTask_TurretRotatablePartLookAt.generated.h"
 
-UCLASS()
+UCLASS(Category = "Turret", meta = (BlueprintSpawnableComponent))
 class VREXPPLUGINEXAMPLE_API UBTTask_TurretRotatablePartLookAt : public UBTTaskNode
 {
 	GENERATED_BODY()

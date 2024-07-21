@@ -59,9 +59,12 @@ void ATurretBase::TurretHierarchyUpdated()
     UE_LOG(LogTemp, Warning, TEXT("TurretHierarchyUpdated"));
 
     ScanerComponents.Empty();
+    RotatableComponents.Empty();
+    GunBarrelComponents.Empty();
 
     ScanForComponentsInTree<UTurretPartScanerComponent>(ScanerComponents);
     ScanForComponentsInTree<UTurretPartRotatableComponent>(RotatableComponents);
+    ScanForComponentsInTree<UTurretPartGunBarrelComponent>(GunBarrelComponents);
 }
 
 template <typename T>

@@ -2,9 +2,10 @@
 
 #pragma once
 
-#include "TurretPartComponents/TurretPartRotatableComponent.h"
 #include "CoreMinimal.h"
+#include "TurretPartComponents/TurretPartRotatableComponent.h"
 #include "TurretPartComponents/TurretPartScanerComponent.h"
+#include <TurretPartComponents/TurretPartGunBarrelComponent.h>
 #include "GameFramework/Character.h"
 #include "TurretBase.generated.h"
 
@@ -18,6 +19,9 @@ public:
 	TArray<UTurretPartScanerComponent*> ScanerComponents;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TArray<UTurretPartRotatableComponent*> RotatableComponents;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	TArray<UTurretPartGunBarrelComponent*> GunBarrelComponents;
+
 	// Sets default values for this character's properties
 	ATurretBase();
 

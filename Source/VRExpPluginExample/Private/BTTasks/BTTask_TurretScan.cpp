@@ -1,7 +1,5 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+﻿#include "BTTasks/BTTask_TurretScan.h"
 
-
-#include "BTTasks/BTTask_TurretScan.h"
 
 UBTTask_TurretScan::UBTTask_TurretScan()
 {
@@ -11,22 +9,6 @@ UBTTask_TurretScan::UBTTask_TurretScan()
 
 EBTNodeResult::Type UBTTask_TurretScan::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
-    //AAIController* AIController = OwnerComp.GetAIOwner();
-    //if (AIController)
-    //{
-    //    ATurretBase* Turret = Cast<ATurretBase>(AIController->GetPawn());
-    //    if (Turret)
-    //    {
-    //        for (UTurretPartRotatableComponent* Component : Turret->RotatableComponents)
-    //        {
-    //            if (Component)
-    //            {
-    //                //Component->Scan(); // Вызов функции Rotate у компонента
-    //            }
-    //        }
-    //        //return EBTNodeResult::Succeeded;
-    //    }
-    //}
     return EBTNodeResult::InProgress;
 }
 

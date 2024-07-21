@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -8,10 +6,7 @@
 #include "BehaviorTree/BTTaskNode.h"
 #include "BTTask_TurretScan.generated.h"
 
-/**
- * 
- */
-UCLASS()
+UCLASS(Category = "Turret", meta = (BlueprintSpawnableComponent))
 class VREXPPLUGINEXAMPLE_API UBTTask_TurretScan : public UBTTaskNode
 {
 	GENERATED_BODY()

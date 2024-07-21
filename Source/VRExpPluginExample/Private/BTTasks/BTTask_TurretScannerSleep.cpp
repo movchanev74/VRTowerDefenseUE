@@ -1,5 +1,6 @@
 ﻿#include "BTTasks/BTTask_TurretScannerSleep.h"
 
+
 UBTTask_TurretScannerSleep::UBTTask_TurretScannerSleep()
 {
     NodeName = "Turret Scanner Sleep";

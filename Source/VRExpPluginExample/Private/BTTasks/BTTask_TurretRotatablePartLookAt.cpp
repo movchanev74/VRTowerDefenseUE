@@ -1,12 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "BTTasks/BTTask_TurretRotatablePartLookAt.h"
 
 
 UBTTask_TurretRotatablePartLookAt::UBTTask_TurretRotatablePartLookAt()
 {
-    NodeName = "Turret Rotatable Part Look At";
+    NodeName = "Rotatable Part Look At";
     bNotifyTick = true;
 }
 

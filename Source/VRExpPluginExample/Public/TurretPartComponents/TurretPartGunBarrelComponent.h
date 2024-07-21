@@ -5,12 +5,16 @@
 #include "TurretPartGunBarrelComponent.generated.h"
 
 UCLASS(Blueprintable, meta = (BlueprintSpawnableComponent))
-class VREXPPLUGINEXAMPLE_API UTurretPartGunBarrelComponent : public UActorComponent
+class VREXPPLUGINEXAMPLE_API UTurretPartGunBarrelComponent : public USceneComponent
 {
 	GENERATED_BODY()
 
 public:	
 	UTurretPartGunBarrelComponent();
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Setup")
+	USceneComponent* MuzzleFlashPoint;
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void Shot();
