@@ -954,7 +954,6 @@ public:
 		void NotifyDropAndSocket(const FBPActorGripInformation &NewDrop, USceneComponent* SocketingParent, FName OptionalSocketName, const FTransform_NetQuantize& RelativeTransformToParent, bool bWeldBodies = true);
 
 	void DropAndSocket_Implementation(const FBPActorGripInformation &NewDrop);
-	UFUNCTION(BlueprintCallable, Category = "GripMotionController")
 	void Socket_Implementation(UObject * ObjectToSocket, bool bWasSimulating, USceneComponent * SocketingParent, FName OptionalSocketName, const FTransform_NetQuantize & RelativeTransformToParent, bool bWeldBodies = true);
 
 	// Keep a hard reference to the drop to avoid deletion errors
