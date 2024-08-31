@@ -11,7 +11,9 @@
 			"AdditionalDependencies": [
 				"DeveloperSettings",
 				"Engine",
-				"AIModule"
+				"AIModule",
+				"VRExpansionPlugin",
+				"GameplayAbilities"
 			]
 		},
 		{
@@ -331,7 +333,6 @@
 			"Name": "GameplayBehaviors",
 			"Enabled": true
 		},
-		
 		{
 			"Name": "OpenXR",
 			"Enabled": true,

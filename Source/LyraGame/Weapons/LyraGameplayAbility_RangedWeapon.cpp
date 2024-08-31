@@ -443,7 +443,9 @@ void ULyraGameplayAbility_RangedWeapon::ActivateAbility(const FGameplayAbilitySp
 	UAbilitySystemComponent* MyAbilityComponent = CurrentActorInfo->AbilitySystemComponent.Get();
 	check(MyAbilityComponent);
 
-	OnTargetDataReadyCallbackDelegateHandle = MyAbilityComponent->AbilityTargetDataSetDelegate(CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey()).AddUObject(this, &ThisClass::OnTargetDataReadyCallback);
+	OnTargetDataReadyCallbackDelegateHandle = MyAbilityComponent
+		->AbilityTargetDataSetDelegate(CurrentSpecHandle, CurrentActivationInfo.GetActivationPredictionKey())
+		.AddUObject(this, &ThisClass::OnTargetDataReadyCallback);
 
 	// Update the last firing time
 	ULyraRangedWeaponInstance* WeaponData = GetWeaponInstance();
