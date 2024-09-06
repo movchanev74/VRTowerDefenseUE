@@ -86,13 +86,13 @@ void ULyraDamageExecution::Execute_Implementation(const FGameplayEffectCustomExe
 	}
 
 	// Apply rules for team damage/self damage/etc...
-	float DamageInteractionAllowedMultiplier = 0.0f;
+	float DamageInteractionAllowedMultiplier = 1.0f;
 	if (HitActor)
 	{
 		ULyraTeamSubsystem* TeamSubsystem = HitActor->GetWorld()->GetSubsystem<ULyraTeamSubsystem>();
 		if (ensure(TeamSubsystem))
 		{
-			DamageInteractionAllowedMultiplier = TeamSubsystem->CanCauseDamage(EffectCauser, HitActor) ? 1.0 : 0.0;
+			//DamageInteractionAllowedMultiplier = TeamSubsystem->CanCauseDamage(EffectCauser, HitActor) ? 1.0 : 0.0;
 		}
 	}
 

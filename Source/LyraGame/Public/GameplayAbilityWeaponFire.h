@@ -53,8 +53,11 @@ protected:
 	FVector VRandConeNormalDistribution(const FVector& Dir, const float ConeHalfAngleRad, const float Exponent);
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
-	void TraceBulletsInCartridge(UPARAM(DisplayName = "Out Hits") TArray<FHitResult>& OutHits);
+	void TraceBulletsInCartridge(UPARAM(DisplayName = "Out Hits") FGameplayAbilityTargetDataHandle& TargetData);
+	//void TraceBulletsInCartridge(UPARAM(DisplayName = "Out Hits") TArray<FHitResult>& OutHits);
 
+	//UFUNCTION(BlueprintImplementableEvent)
+	//void OnRangedWeaponTargetDataReady(const FGameplayAbilityTargetDataHandle& TargetData);
 
 	//UFUNCTION(BlueprintCallable)
 	//void TraceBulletsInCartridge(OUT TArray<FHitResult>& OutHits);

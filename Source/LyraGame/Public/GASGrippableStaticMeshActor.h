@@ -4,6 +4,7 @@
 #include "Grippables/GrippableStaticMeshActor.h"
 #include "AbilitySystemInterface.h"
 #include "AbilitySystemComponent.h"
+#include <AbilitySystem/Attributes/LyraCombatSet.h>
 #include "GASGrippableStaticMeshActor.generated.h"
 
 UCLASS()
@@ -26,7 +27,8 @@ private:
 	// Ability System Component
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Abilities", meta = (AllowPrivateAccess = "true"))
 	UAbilitySystemComponent* AbilitySystemComponent;
-
+	UPROPERTY()
+	ULyraCombatSet* CombatSet;
 	// Attributes (you can define a custom attribute set here)
 	// UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Abilities", meta = (AllowPrivateAccess = "true"))
 	// UYourCustomAttributeSet* AttributeSet;

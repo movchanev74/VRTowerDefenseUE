@@ -3,6 +3,7 @@
 
 #include "GameplayAbilityWeaponFire.h"
 #include <GrippableWeapon.h>
+#include <AbilitySystem/LyraGameplayAbilityTargetData_SingleTargetHit.h>
 
 //void UGameplayAbilityWeaponFire::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
 //{
@@ -25,8 +26,11 @@
 
 //void UGameplayAbilityWeaponFire::TraceBulletsInCartridge(const FRangedWeaponFiringInput& InputData, OUT TArray<FHitResult>& OutHits)
 //void UGameplayAbilityWeaponFire::TraceBulletsInCartridge(OUT TArray<FHitResult>& OutHits)
-void UGameplayAbilityWeaponFire::TraceBulletsInCartridge(TArray<FHitResult>& OutHits)
+//void UGameplayAbilityWeaponFire::TraceBulletsInCartridge(TArray<FHitResult>& OutHits)
+void UGameplayAbilityWeaponFire::TraceBulletsInCartridge(FGameplayAbilityTargetDataHandle& TargetData)
 {
+	TArray<FHitResult> OutHits;
+
 	auto weaponActor = Cast<AGrippableWeapon>(GetOwningActorFromActorInfo());
 	auto muzzleTransform = weaponActor->GetMuuzleTransform();
 	
@@ -95,6 +99,31 @@ void UGameplayAbilityWeaponFire::TraceBulletsInCartridge(TArray<FHitResult>& Out
 			OutHits.Add(Impact);
 		}
 	}
+
+
+	//FGameplayAbilityTargetDataHandle TargetData;
+	//TargetData.UniqueId = WeaponStateComponent ? WeaponStateComponent->GetUnconfirmedServerSideHitMarkerCount() : 0;
+
+	if (OutHits.Num() > 0)
+	{
+		const int32 CartridgeID = FMath::Rand();
+
+		for (const FHitResult& FoundHit : OutHits)
+		{
+			FLyraGameplayAbilityTargetData_SingleTargetHit* NewTargetData = new FLyraGameplayAbilityTargetData_SingleTargetHit();
+			NewTargetData->HitResult = FoundHit;
+			NewTargetData->CartridgeID = CartridgeID;
+
+			TargetData.Add( NewTargetData);
+		}
+	}
+
+	//// Send hit marker information
+	//const bool bProjectileWeapon = false;
+	//if (!bProjectileWeapon && (WeaponStateComponent != nullptr))
+	//{
+	//	WeaponStateComponent->AddUnconfirmedServerSideHitMarkers(TargetData, FoundHits);
+	//}
 }
 
 FVector UGameplayAbilityWeaponFire::VRandConeNormalDistribution(const FVector& Dir, const float ConeHalfAngleRad, const float Exponent)

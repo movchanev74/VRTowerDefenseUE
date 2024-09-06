@@ -5,6 +5,14 @@ AGASGrippableStaticMeshActor::AGASGrippableStaticMeshActor(const FObjectInitiali
 {
     // Create the Ability System Component
     AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>(TEXT("AbilitySystemComponent"));
+
+    if (AbilitySystemComponent)
+    {
+        //HealthSet = CreateDefaultSubobject<ULyraHealthSet>(TEXT("HealthSet"));
+        CombatSet = CreateDefaultSubobject<ULyraCombatSet>(TEXT("CombatSet"));
+        //CombatSet = CreateDefaultSubobject<ULyraCombatSet>(TEXT("CombatSet"));
+        //AbilitySystemComponent->InitStats(ULyraCombatSet::StaticClass(), nullptr);
+    }
 }
 
 void AGASGrippableStaticMeshActor::BeginPlay()
