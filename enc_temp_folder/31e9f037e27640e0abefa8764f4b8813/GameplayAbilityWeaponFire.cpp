@@ -196,9 +196,9 @@ void UGameplayAbilityWeaponFire::TraceBulletsInCartridge(FGameplayAbilityTargetD
 		if (HitActor)
 		{
 //#if ENABLE_DRAW_DEBUG
-			//{
-			//	DrawDebugPoint(GetWorld(), Impact.ImpactPoint, 1, FColor::Red, false, 1);
-			//}
+			{
+				DrawDebugPoint(GetWorld(), Impact.ImpactPoint, 1, FColor::Red, false, 1);
+			}
 //#endif
 
 			if (AllImpacts.Num() > 0)
@@ -280,7 +280,7 @@ FHitResult UGameplayAbilityWeaponFire::DoSingleBulletTrace(const FVector& StartT
 {
 	//#if ENABLE_DRAW_DEBUG
 	static float DebugThickness = 1.0f;
-	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Red, false, 1, 0, DebugThickness);
+	DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Red, false, 1, 0, DebugThickness);
 	//#endif 
 
 	FHitResult Impact;

@@ -41,6 +41,8 @@ protected:
 	};
 
 protected:
+	void ExtractHitLocationsFromTargetData(const FGameplayAbilityTargetDataHandle TargetData, TArray<FVector>& OutHitLocations);
+
 	static int32 FindFirstPawnHitResult(const TArray<FHitResult>& HitResults);
 
 	FHitResult WeaponTrace(const FVector& StartTrace, const FVector& EndTrace, float SweepRadius, bool bIsSimulated, OUT TArray<FHitResult>& OutHitResults) const;
@@ -54,6 +56,15 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Category = "Weapon")
 	void TraceBulletsInCartridge(UPARAM(DisplayName = "Out Hits") FGameplayAbilityTargetDataHandle& TargetData);
+
+	UFUNCTION(BlueprintCallable, Category = "Weapon")
+	void ApplyWeaponFireEffect(UPARAM(DisplayName = "Hits") FGameplayAbilityTargetDataHandle TargetData, TSubclassOf<UGameplayEffect> EffectClass);
+
+	UFUNCTION(BlueprintCallable, Category = "Ability|Weapon")
+	static FWeaponFireGameplayEffectContext GetWeaponFireEffectContextFromHandle(const FGameplayEffectContextHandle& ContextHandle);
+
+	//UFUNCTION(BlueprintCallable, Category = "Ability|Weapon")
+	//FWeaponFireGameplayEffectContext GetWeaponFireEffectContextFromHandle(const FGameplayEffectContextHandle& ContextHandle) const;
 	//void TraceBulletsInCartridge(UPARAM(DisplayName = "Out Hits") TArray<FHitResult>& OutHits);
 
 	//UFUNCTION(BlueprintImplementableEvent)

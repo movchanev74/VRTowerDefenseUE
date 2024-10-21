@@ -20,5 +20,6 @@ public class LyraEditorTarget : TargetRules
 
 		// This is used for touch screen development along with the "Unreal Remote 2" app
 		EnablePlugins.Add("RemoteSession");
+		ExtraModuleNames.Add("AttributesDebugger");
 	}
 }

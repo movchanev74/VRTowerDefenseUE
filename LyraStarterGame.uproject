@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.3",
+	"EngineAssociation": "{6C97248E-45E9-06CB-D02C-BFAC9E0E608F}",
 	"Category": "Samples",
 	"Description": "",
 	"Modules": [
@@ -13,8 +13,14 @@
 				"Engine",
 				"AIModule",
 				"VRExpansionPlugin",
-				"GameplayAbilities"
+				"GameplayAbilities",
+				"CoreUObject"
 			]
+		},
+		{
+			"Name": "AttributesDebugger",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
 		},
 		{
 			"Name": "LyraEditor",

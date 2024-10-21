@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GASGrippableStaticMeshActor.h"
+#include "WeaponAttributeSet.h"
 #include "GrippableWeapon.generated.h"
 
 /**
@@ -17,4 +18,10 @@ class LYRAGAME_API AGrippableWeapon : public AGASGrippableStaticMeshActor
 public:
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	FTransform GetMuuzleTransform();
+
+	AGrippableWeapon(const FObjectInitializer& ObjectInitializer);
+
+private:
+	UPROPERTY()
+	UWeaponAttributeSet* WeaponAttributeSet;
 };
